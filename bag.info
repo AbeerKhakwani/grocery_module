@@ -1,0 +1,5 @@
+name= store
+description = Grocery list
+package = Epicodus Examples
+core = 7.x
+files[] = bag.module

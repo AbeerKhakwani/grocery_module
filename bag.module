@@ -1,0 +1,42 @@
+<?php
+
+function bag_menu(){
+
+     $item = array();
+     $item['list']= array(
+          'title' => 'Shopping List!',
+          'page callback' => 'list_display',
+          'access callback' => TRUE,
+          'type' => MENU_NORMAL_ITEM,
+
+     );
+
+    return $item;
+}
+
+
+function list_display(){
+
+    $output ="";
+
+    $list_array =array(
+        'Eggs'=> array(
+            'price'=>'1.99',
+            'amount'=>'2 cartons'),
+        'Pepper'=> array(
+            'price'=>'0.99',
+            'amount'=>'2 packets'),
+        'Diet coke'=> array(
+            'price'=>'1.45',
+            'amount'=>'30 Cans'),
+
+    );
+
+    foreach($list_array as $item => $item_array_info){
+        $output .= '<h3>'. $item .'</h3>';
+        $output .= '<li>$'. $item_array_info['price'] .'</li>';
+        $output .= '<li>'. $item_array_info['amount'] .'</li>';
+
+    }
+    return $output;
+}
